@@ -1,0 +1,83 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="./node_modules/font-awesome/css/font-awesome.css'">
+    <link href="src/todolist.css" rel="stylesheet">
+    <title>ToDoList</title>
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <h2>ToDoList</h2>
+        <input id='todoInput' class="enter" type="text" placeholder="  添加ToDo" required onkeypress="if(event.keyCode==13) {sub.click();return false;}"/>
+        <input type="submit" value="提交" id="sub" >
+    </div>
+    <div class="desk">
+        <div class="run">
+            <div class="a">
+                <div class="caption">
+                    <h2 style="color: #000000">正在进行</h2>
+                </div>
+                <div class="count">
+                    <span class="qunty" id="q1">0</span>
+                </div>
+            </div>
+            <div class="task" id="task">
+            </div>
+        </div>
+        <div class="finish">
+            <div class="a">
+                <div class="caption">
+                    <h2 style="color: #000000">已经完成</h2>
+                </div>
+                <div class="count">
+                    <span class="qunty" id="q2">0</span>
+                </div>
+            </div>
+            <div class="taskl" id="taskl">
+            </div>
+        </div>
+    </div>
+    <script src="./node_modules/seajs/dist/sea.js"></script>
+    <script type="text/javascript">
+        seajs.config({
+            // 别名配置
+            alias: {
+                'jquery': '../node_modules/jquery/dist/jquery.js'
+            },
+            charset: 'utf-8' // 文件编码
+        });
+            seajs.use('./src/main');
+    </script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="./src/todolist.css">
+</head>
+<body>
+<header>
+    <section>
+        <form action="javascript:postaction()" id="form">
+            <label for="title">ToDoList</label>
+            <input type="text" id="title" name="title" placeholder="添加ToDo" required="required" autocomplete="off" />
+        </form>
+    </section>
+</header>
+<section>
+    <h2 onclick="save()">正在进行 <span id="todocount"></span></h2>
+    <ol id="todolist" class="demo-box">
+    </ol>
+    <h2>已经完成 <span id="donecount"></span></h2>
+    <ul id="donelist">
+    </ul>
+</section>
+<script type="text/javascript" src="./src/todo.js"></script>
+</body>
+</html>
